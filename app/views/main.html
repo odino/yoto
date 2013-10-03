@@ -1,0 +1,16 @@
+<div class="hero-unit">
+    <ul ng-repeat="(index, task) in tasks track by index">
+        <li>
+            <p ng-bind-html="markdown(task.title)" />
+            <p ng-bind-html="markdown(task.description)" />
+        </li>
+        <i class="icon-minus-sign" ng-click="removeTask(index)" />
+    </ul>
+</div>
+
+<div class="hero-unit">
+    <ng-init="newTask = {}" />
+    <input type="text" ng-model="newTask.title" placeholder="Enter title...">
+    <textarea type="text" ng-model="newTask.description" placeholder="Enter description..." />
+    <button ng-click="addTask(newTask)">Submit</button>
+</div>
