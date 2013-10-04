@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yotoApp', ['ngRoute', 'ngSanitize', 'btford.markdown'])
+angular.module('yotoApp', ['ngRoute', 'ngSanitize', 'btford.markdown', 'firebase', 'ui'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

@@ -1,16 +1,25 @@
 <div class="hero-unit">
+    <p ng-show="message" class="text-{{ message.type }}">{{ message.content }}</p>
+    <h3>
+        Your tasks
+    </h3>
     <ul ng-repeat="(index, task) in tasks track by index">
-        <li>
+        <li ng-animate="'animate'">
             <p ng-bind-html="markdown(task.title)" />
             <p ng-bind-html="markdown(task.description)" />
+            <img src="http://www.gravatar.com/avatar/{{ md5(task.user) }}?s=50" />
         </li>
-        <i class="icon-minus-sign" ng-click="removeTask(index)" />
+        <i class="icon-minus-sign" ng-click="manager.remove(index)" />
     </ul>
 </div>
 
 <div class="hero-unit">
-    <ng-init="newTask = {}" />
-    <input type="text" ng-model="newTask.title" placeholder="Enter title...">
-    <textarea type="text" ng-model="newTask.description" placeholder="Enter description..." />
-    <button ng-click="addTask(newTask)">Submit</button>
+    <h3>
+        Add a new task
+    </h3>
+    <form class="form-inline" ng-submit="manager.add(newTask)" ng-init="newTask = {}">
+        <input type="text" ng-model="newTask.title" placeholder="Enter title..." required>
+        <textarea type="text" rows="10" ng-model="newTask.description" placeholder="Enter description..." required/>
+        <input type="submit" />
+    </form>
 </div>

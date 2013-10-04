@@ -11,7 +11,9 @@
     "angular-resource": "~1.0.7",
     "angular-cookies": "~1.0.7",
     "angular-sanitize": "~1.0.7",
-    "angular-markdown-directive": "master"
+    "angular-markdown-directive": "master",
+    "angular-ui-bower": "master",
+    "js-md5": "master"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",
